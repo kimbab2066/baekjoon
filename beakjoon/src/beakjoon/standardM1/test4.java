@@ -5,30 +5,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class test1 {
+public class test4 {
 	public static void main(String[] args) throws IOException {
-		// A = 고정비용 B = 가변비용 C = 상품가격
-		// A + Bn = Cn
-		// A = Cn - Bn
-		// A = n(C-B)
-		// n = A/(C-B)
-		// n+1 = A/(C-B)+1
-		// C-B<0
-		// C<B return -1
-
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-
+		// A = up B = down V = length
 		int A = Integer.parseInt(st.nextToken());
 		int B = Integer.parseInt(st.nextToken());
-		int C = Integer.parseInt(st.nextToken());
-		if (C <= B) {
-			System.out.println("-1");
+		int V = Integer.parseInt(st.nextToken());
+		int day = (V - B) / (A - B);
 
-		} else {
-			System.out.println(A / (C - B) + 1);
+		if ((V - B) % (A - B) != 0) {
+			day++;
 		}
+		System.out.println(day);
 
 	}// end of main
 }// end of class
+
+//3 1 7 7-1 % 3-1 = 6 % 2 = 0	6/2 = 3
+//3 1 8 8-1 % 3-1 = 7 % 2 = 1	7/2 = 3
