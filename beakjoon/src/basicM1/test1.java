@@ -1,4 +1,4 @@
-package beakjoon.standardM1;
+package basicM1;
 
 import java.io.BufferedReader;
 import java.io.IOException;
